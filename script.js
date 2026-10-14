@@ -299,14 +299,44 @@ function initStickyHeader() {
 // ================= MOBILE MENU =================
 function initMobileMenu() {
   if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+    mobileMenuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('active');
+      mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      const icon = mobileMenuToggle.querySelector('i');
+      if (icon) {
+        if (isOpen) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        } else {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        const icon = mobileMenuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
     });
   }
 
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       navMenu?.classList.remove('active');
+      mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+      const icon = mobileMenuToggle?.querySelector('i');
+      if (icon) {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
     });
   });
 }
