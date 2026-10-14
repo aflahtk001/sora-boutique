@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SORA | All Products - Curated Boutique Fashion</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Alex Brush -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Alex+Brush&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="announcement-bar">
+    <p>Enjoy <strong>20% off</strong> on your first purchase! & <strong>Free Shipping</strong> on Orders Over ₹50</p>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="index.html" class="brand-logo">
+        <span class="logo-script">Sora</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html?category=all" class="nav-link">Categories</a></li>
+          <li><a href="shop.html" class="nav-link active">Shop</a></li>
+          <li><a href="index.html#about" class="nav-link">About us</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="header-actions">
+        <button class="action-btn" id="searchToggleBtn" title="Search" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="action-btn cart-btn" id="cartToggleBtn" title="Product Enquiry Bag" aria-label="Enquiry Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count cart-count" id="cartCountBadge">0</span>
+        </button>
+        <button class="action-btn" title="Account" aria-label="Account" onclick="showToast('Account portal coming soon')">
+          <i class="fa-regular fa-user"></i>
+        </button>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= SHOP HEADER & CONTROLS ================= -->
+    <section class="shop-header-section">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Shop All</span>
+        </div>
+        <div class="shop-banner-content">
+          <h1 class="shop-banner-title">Our Collection</h1>
+          <p class="shop-banner-desc">
+            Discover modern essentials and handcrafted luxury apparel created with durable, breathable fabrics and timeless silhouettes.
+          </p>
+        </div>
+
+        <!-- Unified Controls Row: Pills on Left, Sort Dropdown on Right -->
+        <div class="shop-controls-bar">
+          <div class="shop-category-pills">
+            <button class="cat-pill active" data-category="all" onclick="setCategoryFilter('all', this)">All Items</button>
+            <button class="cat-pill" data-category="men" onclick="setCategoryFilter('men', this)">Men</button>
+            <button class="cat-pill" data-category="women" onclick="setCategoryFilter('women', this)">Women</button>
+            <button class="cat-pill" data-category="girls" onclick="setCategoryFilter('girls', this)">Girls</button>
+            <button class="cat-pill" data-category="boys" onclick="setCategoryFilter('boys', this)">Boys</button>
+          </div>
+
+          <div class="sort-by-wrapper">
+            <label for="sortTriggerBtn">Sort by:</label>
+            <div class="custom-select-container" id="customSortDropdown">
+              <!-- Native select preserved for accessibility and form state -->
+              <select id="sortSelect" onchange="handleSortChange(this.value)" tabindex="-1" aria-hidden="true" class="sr-only-select">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name-asc">Alphabetical: A-Z</option>
+                <option value="rating">Top Rated</option>
+              </select>
+
+              <!-- Custom Select Trigger Button (Clean text only) -->
+              <button type="button" 
+                      class="custom-select-trigger" 
+                      id="sortTriggerBtn" 
+                      aria-haspopup="listbox" 
+                      aria-expanded="false" 
+                      aria-controls="sortOptionsList">
+                <span class="selected-text" id="selectedSortLabelText">Featured</span>
+                <i class="fa-solid fa-chevron-down select-chevron" aria-hidden="true"></i>
+              </button>
+
+              <!-- Custom Luxury Dropdown Menu (Clean text-only options) -->
+              <div class="custom-select-menu" id="sortOptionsList" role="listbox" aria-labelledby="sortTriggerBtn">
+                <div class="custom-option selected" role="option" data-value="featured" aria-selected="true" tabindex="0">
+                  <span class="option-title">Featured</span>
+                  <i class="fa-solid fa-check checkmark-icon"></i>
+                </div>
+
+                <div class="custom-option" role="option" data-value="price-asc" aria-selected="false" tabindex="0">
+                  <span class="option-title">Price: Low to High</span>
+                  <i class="fa-solid fa-check checkmark-icon"></i>
+                </div>
+
+                <div class="custom-option" role="option" data-value="price-desc" aria-selected="false" tabindex="0">
+                  <span class="option-title">Price: High to Low</span>
+                  <i class="fa-solid fa-check checkmark-icon"></i>
+                </div>
+
+                <div class="custom-option" role="option" data-value="name-asc" aria-selected="false" tabindex="0">
+                  <span class="option-title">Alphabetical: A-Z</span>
+                  <i class="fa-solid fa-check checkmark-icon"></i>
+                </div>
+
+                <div class="custom-option" role="option" data-value="rating" aria-selected="false" tabindex="0">
+                  <span class="option-title">Top Rated</span>
+                  <i class="fa-solid fa-check checkmark-icon"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MAIN SHOP SECTION ================= -->
+    <section class="shop-listing-section">
+      <div class="container">
+        <!-- Layout Grid with Sidebar Filters & Product Listing -->
+        <div class="shop-layout">
+          
+          <!-- SIDEBAR FILTERS -->
+          <aside class="shop-sidebar" id="shopSidebar">
+            <div class="sidebar-header-mobile">
+              <h3>Filters</h3>
+              <button class="close-sidebar-btn" onclick="toggleSidebarFilter()">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <!-- Filter Group: Categories -->
+            <div class="filter-group">
+              <h4 class="filter-heading">Categories</h4>
+              <div class="filter-checkbox-list">
+                <label class="custom-checkbox">
+                  <input type="radio" name="sidebarCat" value="all" checked onchange="setCategoryFilter('all')" />
+                  <span class="checkmark"></span>
+                  All Collections <span class="filter-count" id="catCountAll">(9)</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="radio" name="sidebarCat" value="men" onchange="setCategoryFilter('men')" />
+                  <span class="checkmark"></span>
+                  Men's Wear <span class="filter-count" id="catCountMen">(4)</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="radio" name="sidebarCat" value="women" onchange="setCategoryFilter('women')" />
+                  <span class="checkmark"></span>
+                  Women's Wear <span class="filter-count" id="catCountWomen">(3)</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="radio" name="sidebarCat" value="girls" onchange="setCategoryFilter('girls')" />
+                  <span class="checkmark"></span>
+                  Girls' Collection <span class="filter-count" id="catCountGirls">(1)</span>
+                </label>
+                <label class="custom-checkbox">
+                  <input type="radio" name="sidebarCat" value="boys" onchange="setCategoryFilter('boys')" />
+                  <span class="checkmark"></span>
+                  Boys' Collection <span class="filter-count" id="catCountBoys">(1)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Filter Group: Price Range -->
+            <div class="filter-group">
+              <h4 class="filter-heading">Price Range</h4>
+              <div class="price-range-control">
+                <input type="range" id="priceRange" min="200" max="1000" step="50" value="1000" oninput="handlePriceRange(this.value)" />
+                <div class="price-range-labels">
+                  <span>₹200</span>
+                  <span id="maxPriceLabel">Max: ₹1000</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Filter Group: Sizes -->
+            <div class="filter-group">
+              <h4 class="filter-heading">Sizes</h4>
+              <div class="filter-size-chips">
+                <button class="size-chip active" data-size="all" onclick="toggleSizeFilter(this, 'all')">ALL</button>
+                <button class="size-chip" data-size="XS" onclick="toggleSizeFilter(this, 'XS')">XS</button>
+                <button class="size-chip" data-size="S" onclick="toggleSizeFilter(this, 'S')">S</button>
+                <button class="size-chip" data-size="M" onclick="toggleSizeFilter(this, 'M')">M</button>
+                <button class="size-chip" data-size="L" onclick="toggleSizeFilter(this, 'L')">L</button>
+                <button class="size-chip" data-size="XL" onclick="toggleSizeFilter(this, 'XL')">XL</button>
+              </div>
+            </div>
+
+            <!-- Filter Group: Color Palette -->
+            <div class="filter-group">
+              <h4 class="filter-heading">Colors</h4>
+              <div class="filter-color-dots">
+                <button class="color-dot" data-color="beige" style="background-color: #C2A68D;" title="Sand Beige" onclick="filterByColor('beige', this)"></button>
+                <button class="color-dot" data-color="brown" style="background-color: #38241D;" title="Espresso Brown" onclick="filterByColor('brown', this)"></button>
+                <button class="color-dot" data-color="plum" style="background-color: #723C47;" title="Mulberry Plum" onclick="filterByColor('plum', this)"></button>
+                <button class="color-dot" data-color="green" style="background-color: #2F5244;" title="Emerald Green" onclick="filterByColor('green', this)"></button>
+                <button class="color-dot" data-color="pink" style="background-color: #E27B8A;" title="Blush Rose" onclick="filterByColor('pink', this)"></button>
+                <button class="color-dot" data-color="white" style="background-color: #FAF6F0; border: 1px solid #CCC;" title="Off White" onclick="filterByColor('white', this)"></button>
+              </div>
+            </div>
+
+            <!-- Reset Filters -->
+            <button class="btn btn-outline-dark-pill btn-reset-filters" onclick="resetAllFilters()">
+              <i class="fa-solid fa-rotate-right"></i> Reset All Filters
+            </button>
+          </aside>
+
+          <!-- PRODUCTS LISTING CONTENT -->
+          <div class="shop-products-wrapper">
+            <div class="shop-listing-header">
+              <p class="products-count-text" id="productsCountText">Showing products...</p>
+              <button class="mobile-filter-btn" id="mobileFilterBtn" onclick="toggleSidebarFilter()">
+                <i class="fa-solid fa-sliders"></i> Filters
+              </button>
+            </div>
+
+            <!-- Active filter chips -->
+            <div class="active-filters-row" id="activeFiltersRow" style="display: none;"></div>
+
+            <div class="product-grid product-grid-3" id="shopProductsGrid">
+              <!-- Products dynamically rendered by script.js -->
+            </div>
+
+            <!-- Empty State if no products match -->
+            <div class="shop-empty-state" id="shopEmptyState" style="display: none;">
+              <i class="fa-solid fa-box-open"></i>
+              <h3>No products found</h3>
+              <p>Try adjusting your search criteria, price range, or category filters.</p>
+              <button class="btn btn-dark-pill" onclick="resetAllFilters()">Reset Filters</button>
+            </div>
+
+            <!-- Pagination -->
+            <div class="shop-pagination" id="shopPagination">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= FEATURES BAR ================= -->
+    <section class="features-section">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <h4 class="feature-title">Free Shipping</h4>
+            <p class="feature-desc">Complimentary tracked express delivery on all orders over ₹50, in luxury packaging.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-headphones-simple"></i></div>
+            <h4 class="feature-title">24/7 Support</h4>
+            <p class="feature-desc">Dedicated styling guidance, fit recommendations, and client support anytime.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+            <h4 class="feature-title">Easy Returns</h4>
+            <p class="feature-desc">Complimentary 30-day returns and exchanges with convenient doorstep pickup.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+            <h4 class="feature-title">Secure Checkout</h4>
+            <p class="feature-desc">Bank-grade 256-bit encryption protecting all orders and payment transactions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Info & Newsletter -->
+        <div class="footer-col-main">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-script">Sora</span>
+          </a>
+          <p class="footer-desc">
+            Guaranteed top quality fashion items. Customer-centric service, modern designs, durable and breathable fabrics.
+          </p>
+          
+          <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+            <input type="email" placeholder="Your Email" class="newsletter-input" required />
+            <button type="submit" class="btn btn-newsletter">Subscribe</button>
+          </form>
+
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Links Column 1 -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Main Page</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="shop.html">Category</a></li>
+            <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 2 -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Utility Page</h4>
+          <ul class="footer-links">
+            <li><a href="#">License</a></li>
+            <li><a href="#">Style Guide</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">404 Not Found</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0128</li>
+            <li><i class="fa-solid fa-envelope"></i> contact@soraboutique.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> Manchester 12459, UK</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 SORA Boutique. All rights reserved.</p>
+        <p class="credits">Built by Saleem Raza &bull; Powered by Figma</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SLIDE-OVER ENQUIRY DRAWER ================= -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title-wrap">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h3>Product Enquiry Bag (<span id="cartDrawerCount">0</span>)</h3>
+      </div>
+      <button class="close-drawer-btn" onclick="closeCart()" aria-label="Close cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-items-container" id="cartItemsContainer">
+      <!-- Items dynamically populated by JS -->
+      <div class="cart-empty-state">
+        <i class="fa-solid fa-bag-shopping empty-icon"></i>
+        <p>Your enquiry bag is empty.</p>
+        <button class="btn btn-dark-pill" onclick="closeCart()">Explore Collection</button>
+      </div>
+    </div>
+
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-subtotal-row">
+        <span>Estimated Total</span>
+        <span class="subtotal-amount" id="cartSubtotal">₹0.00</span>
+      </div>
+      <p class="shipping-note">All items and pricing will be compiled directly into a WhatsApp enquiry.</p>
+      <button class="btn btn-whatsapp-inquiry" onclick="inquireAllWhatsApp()">
+        <i class="fa-brands fa-whatsapp"></i> Enquire All on WhatsApp
+      </button>
+      <button class="clear-cart-btn" onclick="clearCart()">Empty Enquiry Bag</button>
+    </div>
+  </div>
+
+  <!-- ================= QUICK VIEW MODAL ================= -->
+  <div class="modal-overlay" id="quickViewOverlay" onclick="closeQuickView()"></div>
+  <div class="quick-view-modal" id="quickViewModal">
+    <button class="modal-close-btn" onclick="closeQuickView()" aria-label="Close modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="quick-view-content" id="quickViewBody">
+      <!-- Dynamically filled by JS -->
+    </div>
+  </div>
+
+  <!-- ================= SEARCH OVERLAY MODAL ================= -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <div class="search-header">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Search clothes, shirts, collections..." autofocus />
+        </div>
+        <button class="search-close-btn" onclick="closeSearch()" aria-label="Close Search">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-hint">Type to search latest apparel and styles...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div class="toast-notification" id="toastNotification">
+    <i class="fa-solid fa-check-circle toast-icon"></i>
+    <span id="toastMessage">Item added to your bag</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

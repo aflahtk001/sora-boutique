@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SORA | Wear Your Confidence - Modern Boutique</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Alex Brush -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Alex+Brush&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for crisp vector icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="announcement-bar">
+    <p>Enjoy <strong>20% off</strong> on your first purchase! & <strong>Free Shipping</strong> on Orders Over ₹50</p>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="index.html" class="brand-logo">
+        <span class="logo-script">Sora</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="#categories" class="nav-link">Categories</a></li>
+          <li><a href="shop.html" class="nav-link">Shop</a></li>
+          <li><a href="#about" class="nav-link">About us</a></li>
+          <li><a href="#contact" class="nav-link">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="header-actions">
+        <button class="action-btn" id="searchToggleBtn" title="Search" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="action-btn cart-btn" id="cartToggleBtn" title="Product Enquiry Bag" aria-label="Enquiry Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count cart-count" id="cartCountBadge">0</span>
+        </button>
+        <button class="action-btn" title="Account" aria-label="Account" onclick="showToast('Account portal coming soon')">
+          <i class="fa-regular fa-user"></i>
+        </button>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-banner">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <h1 class="hero-title">WEAR YOUR CONFIDENCE</h1>
+            <p class="hero-subtitle">
+              Modern and stylish fashion store website design with a clean layout and elegant product showcase. Perfect for clothing brands, boutiques, and online fashion shops.
+            </p>
+            <div class="hero-buttons">
+              <a href="shop.html" class="btn btn-light-pill">Shop Now</a>
+              <a href="#categories" class="btn btn-outline-pill">Explore Collection</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LATEST PRODUCTS ================= -->
+    <section class="section latest-products-section" id="shop">
+      <div class="container">
+        <div class="section-header-left">
+          <h2 class="section-title">Latest Products</h2>
+        </div>
+
+        <div class="product-grid product-grid-3">
+          <!-- Product Card 1 -->
+          <div class="product-card" data-id="1" onclick="location.href='product-detail.html?id=1'">
+            <div class="product-img-wrapper">
+              <span class="product-card-badge">NEW ARRIVAL</span>
+              <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" alt="T-Shirt Short" loading="lazy" />
+              <button class="quick-view-btn" onclick="event.stopPropagation(); openQuickView(1);">Quick View</button>
+            </div>
+            <div class="product-info">
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <strong>4.9</strong>
+                <span>(32)</span>
+              </div>
+              <h3 class="product-title">T-Shirt Short</h3>
+              <p class="product-price">₹ 890.98</p>
+              <div class="product-card-actions">
+                <button class="btn-card-action btn-card-cart" onclick="event.stopPropagation(); addToCart(1);" title="Add to Cart">
+                  <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+                </button>
+                <button class="btn-card-action btn-card-buy btn-card-whatsapp" onclick="event.stopPropagation(); inquireSingleProductWhatsApp(1);" title="Enquire">
+                  Enquire
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="product-card" data-id="2" onclick="location.href='product-detail.html?id=2'">
+            <div class="product-img-wrapper">
+              <span class="product-card-badge">BESTSELLER</span>
+              <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80" alt="Short-Sleeved Shirts" loading="lazy" />
+              <button class="quick-view-btn" onclick="event.stopPropagation(); openQuickView(2);">Quick View</button>
+            </div>
+            <div class="product-info">
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <strong>5.0</strong>
+                <span>(48)</span>
+              </div>
+              <h3 class="product-title">Short-Sleeved Shirts</h3>
+              <p class="product-price">₹ 912.98</p>
+              <div class="product-card-actions">
+                <button class="btn-card-action btn-card-cart" onclick="event.stopPropagation(); addToCart(2);" title="Add to Cart">
+                  <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+                </button>
+                <button class="btn-card-action btn-card-buy btn-card-whatsapp" onclick="event.stopPropagation(); inquireSingleProductWhatsApp(2);" title="Enquire">
+                  Enquire
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="product-card" data-id="3" onclick="location.href='product-detail.html?id=3'">
+            <div class="product-img-wrapper">
+              <span class="product-card-badge">TRENDING</span>
+              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80" alt="Sleeved Shirts with Inner" loading="lazy" />
+              <button class="quick-view-btn" onclick="event.stopPropagation(); openQuickView(3);">Quick View</button>
+            </div>
+            <div class="product-info">
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <strong>4.8</strong>
+                <span>(19)</span>
+              </div>
+              <h3 class="product-title">Sleeved Shirts with Inner</h3>
+              <p class="product-price">₹ 629.98</p>
+              <div class="product-card-actions">
+                <button class="btn-card-action btn-card-cart" onclick="event.stopPropagation(); addToCart(3);" title="Add to Cart">
+                  <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+                </button>
+                <button class="btn-card-action btn-card-buy btn-card-whatsapp" onclick="event.stopPropagation(); inquireSingleProductWhatsApp(3);" title="Enquire">
+                  Enquire
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES BAR ================= -->
+    <section class="features-section">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <span class="feature-badge">EXPRESS</span>
+            </div>
+            <h4 class="feature-title">Free Shipping</h4>
+            <p class="feature-desc">Complimentary tracked express delivery on all orders over ₹50, delivered in our signature luxury packaging.</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <i class="fa-solid fa-headphones-simple"></i>
+              </div>
+              <span class="feature-badge">24/7 CARE</span>
+            </div>
+            <h4 class="feature-title">Dedicated Concierge</h4>
+            <p class="feature-desc">Personalized styling guidance, fit recommendations, and 24/7 client support whenever you need assistance.</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <i class="fa-solid fa-rotate-left"></i>
+              </div>
+              <span class="feature-badge">30 DAYS</span>
+            </div>
+            <h4 class="feature-title">Effortless Returns</h4>
+            <p class="feature-desc">Complimentary 30-day returns and exchanges with convenient, worry-free doorstep courier pickup.</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-header">
+              <div class="feature-icon">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              <span class="feature-badge">ENCRYPTED</span>
+            </div>
+            <h4 class="feature-title">Secure Checkout</h4>
+            <p class="feature-desc">Bank-grade 256-bit encryption protecting all transactions across credit cards, wallets, and orders.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CATEGORIES SECTION ================= -->
+    <section class="section categories-section" id="categories">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title">Categories</h2>
+          <p class="section-subtitle">Perfect for clothing brands, boutiques, and online fashion shops.</p>
+        </div>
+
+        <div class="category-grid">
+          <!-- Girls -->
+          <div class="category-card" onclick="filterByCategory('girls')">
+            <div class="category-img-container">
+              <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=700&q=80" alt="Girls Fashion" loading="lazy" />
+              <div class="category-badge">GIRLS</div>
+            </div>
+          </div>
+
+          <!-- Men -->
+          <div class="category-card" onclick="filterByCategory('men')">
+            <div class="category-img-container">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=700&q=80" alt="Men Fashion" loading="lazy" />
+              <div class="category-badge">MEN</div>
+            </div>
+          </div>
+
+          <!-- Women -->
+          <div class="category-card" onclick="filterByCategory('women')">
+            <div class="category-img-container">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Women Fashion" loading="lazy" />
+              <div class="category-badge">WOMEN</div>
+            </div>
+          </div>
+
+          <!-- Boys -->
+          <div class="category-card" onclick="filterByCategory('boys')">
+            <div class="category-img-container">
+              <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=700&q=80" alt="Boys Fashion" loading="lazy" />
+              <div class="category-badge">BOYS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXCLUSIVE OFFERS BANNER ================= -->
+    <section class="section exclusive-offer-section">
+      <div class="container">
+        <div class="exclusive-card">
+          <div class="exclusive-content">
+            <h2 class="exclusive-title">Exclusive Offers for<br>a Limited Time</h2>
+            <p class="exclusive-desc">
+              Modern and stylish fashion store website design with a clean layout and elegant product showcase.
+            </p>
+            <div class="exclusive-actions">
+              <a href="shop.html" class="btn btn-dark-pill">Shop Now</a>
+              <a href="#categories" class="btn btn-outline-dark-pill">Explore Collection</a>
+            </div>
+          </div>
+          <div class="exclusive-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="Boutique Showroom" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BRAND LOGO TICKER / MARQUEE ================= -->
+    <div class="brand-ticker-section">
+      <div class="container">
+        <div class="brand-ticker-track">
+          <div class="brand-item"><i class="fa-brands fa-webflow"></i> Webflow</div>
+          <div class="brand-item"><i class="fa-solid fa-shapes"></i> Relume</div>
+          <div class="brand-item"><i class="fa-brands fa-webflow"></i> Webflow</div>
+          <div class="brand-item"><i class="fa-solid fa-shapes"></i> Relume</div>
+          <div class="brand-item"><i class="fa-brands fa-webflow"></i> Webflow</div>
+          <div class="brand-item"><i class="fa-solid fa-shapes"></i> Relume</div>
+          <div class="brand-item"><i class="fa-brands fa-webflow"></i> Webflow</div>
+          <!-- Repeat for smooth loop -->
+          <div class="brand-item"><i class="fa-brands fa-webflow"></i> Webflow</div>
+          <div class="brand-item"><i class="fa-solid fa-shapes"></i> Relume</div>
+          <div class="brand-item"><i class="fa-brands fa-webflow"></i> Webflow</div>
+          <div class="brand-item"><i class="fa-solid fa-shapes"></i> Relume</div>
+          <div class="brand-item"><i class="fa-brands fa-webflow"></i> Webflow</div>
+          <div class="brand-item"><i class="fa-solid fa-shapes"></i> Relume</div>
+          <div class="brand-item"><i class="fa-brands fa-webflow"></i> Webflow</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= FEATURED PRODUCTS ================= -->
+    <section class="section featured-products-section">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-subtitle-left">Modern and stylish fashion store website design with a clean layout and elegant product showcase.</p>
+          </div>
+          <a href="shop.html" class="btn-pill-outline-sm">See all <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+
+        <div class="featured-grid">
+          <!-- Featured 1 -->
+          <div class="featured-card" data-id="4" onclick="location.href='product-detail.html?id=4'">
+            <div class="featured-img-container">
+              <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=700&q=80" alt="Pleated Linen Dress" loading="lazy" />
+              <div class="featured-overlay-actions">
+                <button class="quick-add-btn" onclick="event.stopPropagation(); addToCart(4);" title="Quick Add">
+                  <i class="fa-solid fa-plus"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured 2 -->
+          <div class="featured-card" data-id="5" onclick="location.href='product-detail.html?id=5'">
+            <div class="featured-img-container">
+              <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=700&q=80" alt="Mustard Tan Work Jacket" loading="lazy" />
+              <div class="featured-overlay-actions">
+                <button class="quick-add-btn" onclick="event.stopPropagation(); addToCart(5);" title="Quick Add">
+                  <i class="fa-solid fa-plus"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured 3 -->
+          <div class="featured-card" data-id="6" onclick="location.href='product-detail.html?id=6'">
+            <div class="featured-img-container">
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80" alt="Emerald Co-Ord Suit" loading="lazy" />
+              <div class="featured-overlay-actions">
+                <button class="quick-add-btn" onclick="event.stopPropagation(); addToCart(6);" title="Quick Add">
+                  <i class="fa-solid fa-plus"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured 4 -->
+          <div class="featured-card" data-id="7" onclick="location.href='product-detail.html?id=7'">
+            <div class="featured-img-container">
+              <img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?auto=format&fit=crop&w=700&q=80" alt="Beige Tailored Cargo" loading="lazy" />
+              <div class="featured-overlay-actions">
+                <button class="quick-add-btn" onclick="event.stopPropagation(); addToCart(7);" title="Quick Add">
+                  <i class="fa-solid fa-plus"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEASONAL COLLECTION ================= -->
+    <section class="section seasonal-section">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title">Seasonal Collection</h2>
+          <p class="section-subtitle">Modern and stylish fashion store website design with a clean layout and elegant product showcase.</p>
+        </div>
+
+        <div class="seasonal-grid">
+          <!-- Winter Card -->
+          <div class="seasonal-card" onclick="filterByCategory('men')">
+            <div class="seasonal-img-wrap">
+              <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80" alt="Winter Collection" loading="lazy" />
+              <div class="seasonal-badge-pill">WINTER</div>
+            </div>
+          </div>
+
+          <!-- Summer Card -->
+          <div class="seasonal-card" onclick="filterByCategory('women')">
+            <div class="seasonal-img-wrap">
+              <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80" alt="Summer Collection" loading="lazy" />
+              <div class="seasonal-badge-pill">SUMMER</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS SECTION ================= -->
+    <section class="section testimonials-section" id="about">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <h2 class="section-title">Fashion That Speaks for Itself</h2>
+            <p class="section-subtitle-left">
+              Hear what our happy customers say about their shopping experience and favorite styles from our latest fashion collection.
+            </p>
+          </div>
+          <a href="shop.html" class="btn-pill-outline-sm">See all <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+
+        <div class="testimonial-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "I'm obsessed with their latest collection! Every piece feels high-quality and fits beautifully. The delivery was quick, and the packaging looked so elegant."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Emily R." class="author-avatar" />
+              <div class="author-details">
+                <h5 class="author-name">Emily R.</h5>
+                <span class="author-role">Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "The designs are so elegant and timely — exactly what I was looking for! From browsing to checkout, the whole shopping experience was smooth and enjoyable."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Jake M." class="author-avatar" />
+              <div class="author-details">
+                <h5 class="author-name">Jake M.</h5>
+                <span class="author-role">Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "This store has completely redefined my style. Best premium quality yet accessible, and their customer support team is wonderful with sizing and recommendations."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Sarah L." class="author-avatar" />
+              <div class="author-details">
+                <h5 class="author-name">Sarah L.</h5>
+                <span class="author-role">Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Info & Newsletter -->
+        <div class="footer-col-main">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-script">Sora</span>
+          </a>
+          <p class="footer-desc">
+            Guaranteed top quality fashion items. Customer-centric service, modern designs, durable and breathable fabrics.
+          </p>
+          
+          <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+            <input type="email" placeholder="Your Email" class="newsletter-input" required />
+            <button type="submit" class="btn btn-newsletter">Subscribe</button>
+          </form>
+
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Links Column 1 -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Main Page</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#categories">Category</a></li>
+            <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column 2 -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Utility Page</h4>
+          <ul class="footer-links">
+            <li><a href="#">License</a></li>
+            <li><a href="#">Style Guide</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">404 Not Found</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0128</li>
+            <li><i class="fa-solid fa-envelope"></i> contact@soraboutique.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> Manchester 12459, UK</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 SORA Boutique. All rights reserved.</p>
+        <p class="credits">Built by Saleem Raza &bull; Powered by Figma</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SLIDE-OVER ENQUIRY DRAWER ================= -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title-wrap">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h3>Product Enquiry Bag (<span id="cartDrawerCount">0</span>)</h3>
+      </div>
+      <button class="close-drawer-btn" onclick="closeCart()" aria-label="Close cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-items-container" id="cartItemsContainer">
+      <!-- Items dynamically populated by JS -->
+      <div class="cart-empty-state">
+        <i class="fa-solid fa-bag-shopping empty-icon"></i>
+        <p>Your enquiry bag is empty.</p>
+        <button class="btn btn-dark-pill" onclick="closeCart()">Explore Collection</button>
+      </div>
+    </div>
+
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-subtotal-row">
+        <span>Estimated Total</span>
+        <span class="subtotal-amount" id="cartSubtotal">₹0.00</span>
+      </div>
+      <p class="shipping-note">All items and pricing will be compiled directly into a WhatsApp enquiry.</p>
+      <button class="btn btn-whatsapp-inquiry" onclick="inquireAllWhatsApp()">
+        <i class="fa-brands fa-whatsapp"></i> Enquire All on WhatsApp
+      </button>
+      <button class="clear-cart-btn" onclick="clearCart()">Empty Enquiry Bag</button>
+    </div>
+  </div>
+
+  <!-- ================= QUICK VIEW MODAL ================= -->
+  <div class="modal-overlay" id="quickViewOverlay" onclick="closeQuickView()"></div>
+  <div class="quick-view-modal" id="quickViewModal">
+    <button class="modal-close-btn" onclick="closeQuickView()" aria-label="Close modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="quick-view-content" id="quickViewBody">
+      <!-- Dynamically filled by JS -->
+    </div>
+  </div>
+
+  <!-- ================= SEARCH OVERLAY MODAL ================= -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <div class="search-header">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Search clothes, shirts, collections..." autofocus />
+        </div>
+        <button class="search-close-btn" onclick="closeSearch()" aria-label="Close Search">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-hint">Type to search latest apparel and styles...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div class="toast-notification" id="toastNotification">
+    <i class="fa-solid fa-check-circle toast-icon"></i>
+    <span id="toastMessage">Item added to your bag</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SORA | Product Details - Modern Apparel Boutique</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Alex Brush -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Alex+Brush&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="announcement-bar">
+    <p>Enjoy <strong>20% off</strong> on your first purchase! & <strong>Free Shipping</strong> on Orders Over ₹50</p>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="index.html" class="brand-logo">
+        <span class="logo-script">Sora</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="shop.html?category=all" class="nav-link">Categories</a></li>
+          <li><a href="shop.html" class="nav-link active">Shop</a></li>
+          <li><a href="index.html#about" class="nav-link">About us</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="header-actions">
+        <button class="action-btn" id="searchToggleBtn" title="Search" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="action-btn cart-btn" id="cartToggleBtn" title="Product Enquiry Bag" aria-label="Enquiry Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count cart-count" id="cartCountBadge">0</span>
+        </button>
+        <button class="action-btn" title="Account" aria-label="Account" onclick="showToast('Account portal coming soon')">
+          <i class="fa-regular fa-user"></i>
+        </button>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= BREADCRUMBS ================= -->
+    <div class="container">
+      <div class="breadcrumb pdp-breadcrumb">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="shop.html">Shop</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-category" id="pdpBreadcrumbCat">Apparel</span>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current" id="pdpBreadcrumbTitle">Product Name</span>
+      </div>
+    </div>
+
+    <!-- ================= MAIN PRODUCT DETAIL SECTION ================= -->
+    <section class="pdp-main-section">
+      <div class="container">
+        <div class="pdp-layout-grid">
+          
+          <!-- LEFT: PRODUCT GALLERY -->
+          <div class="pdp-gallery">
+            <div class="pdp-main-image-wrap">
+              <span class="pdp-badge" id="pdpBadge">NEW ARRIVAL</span>
+              <img id="pdpMainImage" src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=85" alt="Product Image" />
+            </div>
+
+            <!-- Thumbnail Navigation Strip (5 Images Aligned) -->
+            <div class="pdp-thumbnails" id="pdpThumbnails">
+              <div class="thumb-item active" onclick="switchMainImage(this, 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=85')">
+                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=300&q=80" alt="View 1" />
+              </div>
+              <div class="thumb-item" onclick="switchMainImage(this, 'https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=1200&q=85')">
+                <img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=300&q=80" alt="View 2" />
+              </div>
+              <div class="thumb-item" onclick="switchMainImage(this, 'https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?auto=format&fit=crop&w=1200&q=85')">
+                <img src="https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?auto=format&fit=crop&w=300&q=80" alt="View 3" />
+              </div>
+              <div class="thumb-item" onclick="switchMainImage(this, 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=85')">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=300&q=80" alt="View 4" />
+              </div>
+              <div class="thumb-item" onclick="switchMainImage(this, 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1200&q=85')">
+                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=300&q=80" alt="View 5" />
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: PRODUCT INFO & INQUIRY CONTROLS -->
+          <div class="pdp-info-panel">
+            <span class="pdp-tag-sub" id="pdpCategoryTag">Men's Ready-to-Wear</span>
+            <h1 class="pdp-title" id="pdpTitle">T-Shirt Short</h1>
+
+            <div class="pdp-rating-row">
+              <div class="pdp-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="pdp-rating-score" id="pdpRatingScore">4.9</span>
+              <span class="pdp-rating-count" id="pdpRatingCount">(32 verified reviews)</span>
+              <span class="pdp-divider">&bull;</span>
+              <span class="pdp-in-stock"><i class="fa-solid fa-check"></i> In Stock</span>
+            </div>
+
+            <div class="pdp-price-wrap">
+              <span class="pdp-current-price" id="pdpPrice">₹ 890.98</span>
+              <span class="pdp-tax-note">Tax included. Free global delivery on this item.</span>
+            </div>
+
+            <p class="pdp-description" id="pdpDescription">
+              A relaxed-fit linen blend short-sleeved shirt crafted from premium breathable yarns with custom horn buttons. Tailored with refined double-needle stitching and an effortless draped silhouette.
+            </p>
+
+            <!-- Color Options -->
+            <div class="pdp-option-section">
+              <div class="option-header">
+                <label>Color: <strong id="pdpSelectedColorName">Sand Earth</strong></label>
+              </div>
+              <div class="pdp-color-swatches" id="pdpColorSwatches">
+                <button class="color-swatch-btn active" style="background-color: #C2A68D;" title="Sand Earth" onclick="selectPdpColor(this, 'Sand Earth')"></button>
+                <button class="color-swatch-btn" style="background-color: #38241D;" title="Espresso Brown" onclick="selectPdpColor(this, 'Espresso Brown')"></button>
+                <button class="color-swatch-btn" style="background-color: #723C47;" title="Mulberry Plum" onclick="selectPdpColor(this, 'Mulberry Plum')"></button>
+                <button class="color-swatch-btn" style="background-color: #2F5244;" title="Forest Sage" onclick="selectPdpColor(this, 'Forest Sage')"></button>
+              </div>
+            </div>
+
+            <!-- Size Options -->
+            <div class="pdp-option-section">
+              <div class="option-header">
+                <label>Size: <strong id="pdpSelectedSizeLabel">M (Standard)</strong></label>
+                <button class="size-guide-trigger" onclick="openSizeGuideModal()">
+                  <i class="fa-solid fa-ruler-horizontal"></i> Size Guide
+                </button>
+              </div>
+              <div class="pdp-size-picker" id="pdpSizePicker">
+                <button class="size-btn" onclick="selectPdpSize(this, 'XS')">XS</button>
+                <button class="size-btn" onclick="selectPdpSize(this, 'S')">S</button>
+                <button class="size-btn active" onclick="selectPdpSize(this, 'M')">M</button>
+                <button class="size-btn" onclick="selectPdpSize(this, 'L')">L</button>
+                <button class="size-btn" onclick="selectPdpSize(this, 'XL')">XL</button>
+                <button class="size-btn" onclick="selectPdpSize(this, 'XXL')">XXL</button>
+              </div>
+            </div>
+
+            <!-- Quantity & Add to Cart Controls -->
+            <div class="pdp-actions-row">
+              <div class="pdp-qty-wrapper">
+                <button class="pdp-qty-btn" onclick="changePdpQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="pdp-qty-val" id="pdpQtyVal">1</span>
+                <button class="pdp-qty-btn" onclick="changePdpQty(1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+
+              <button class="btn btn-dark-pill pdp-add-cart-btn" onclick="handlePdpAddToCart()">
+                <i class="fa-solid fa-bag-shopping"></i> Add to Enquiry Bag
+              </button>
+            </div>
+
+            <button class="btn btn-outline-dark-pill pdp-whatsapp-btn" style="width: 100%;" onclick="handlePdpWhatsAppInquiry()">
+              <i class="fa-brands fa-whatsapp"></i> Enquire This Item on WhatsApp
+            </button>
+
+            <!-- Trust Highlights -->
+            <div class="pdp-trust-box" style="margin-top: 20px;">
+              <div class="trust-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <div>
+                  <strong>Direct WhatsApp Concierge</strong>
+                  <p>Instant answers on fit, fabric, and availability.</p>
+                </div>
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>
+                  <strong>Complimentary Express Delivery</strong>
+                  <p>Estimated arrival in 2–4 business days worldwide.</p>
+                </div>
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-leaf"></i>
+                <div>
+                  <strong>Ethically Sourced & Handcrafted</strong>
+                  <p>100% sustainable European flax linen & organic dyes.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Details -->
+            <div class="pdp-accordions">
+              <div class="accordion-item active">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                  <span>Description & Craftsmanship</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="accordion-body">
+                  <p>Every garment is hand-inspected in our atelier. Designed with subtle shoulder drops, clean reinforced seam closures, and a timeless relaxed boxy silhouette that pairs effortlessly with tailored trousers or denim.</p>
+                  <ul>
+                    <li>100% Normandy long-staple linen</li>
+                    <li>Natural biodegradable horn buttons</li>
+                    <li>Pre-washed to eliminate post-purchase shrinkage</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                  <span>Sizing & Fit Advice</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="accordion-body">
+                  <p>Designed for a relaxed, easy drape. If you prefer a tailored slim profile, we suggest sizing down one size. Model is 6'1" (185 cm) with a 38" chest and wears size Medium.</p>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                  <span>Care Instructions</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="accordion-body">
+                  <p>Machine wash cold on gentle cycle with neutral detergent. Hang or flat dry in shade. Light steam iron while slightly damp for crisp luxury finish.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPLETE THE LOOK ================= -->
+    <section class="section complete-look-section">
+      <div class="container">
+        <div class="section-header-left">
+          <h2 class="section-title">Complete The Look</h2>
+          <p class="section-subtitle-left">Curated companion pieces designed to pair seamlessly together.</p>
+        </div>
+
+        <div class="product-grid product-grid-3">
+          <!-- Companion 1 -->
+          <div class="product-card" onclick="location.href='product-detail.html?id=7'">
+            <div class="product-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?auto=format&fit=crop&w=800&q=80" alt="Beige Tailored Cargo" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <strong>4.6</strong>
+                <span>(14)</span>
+              </div>
+              <h3 class="product-title">Beige Tailored Cargo</h3>
+              <p class="product-price">₹ 390.00</p>
+              <div class="product-card-actions">
+                <button class="btn-card-action btn-card-cart" onclick="event.stopPropagation(); addToCart(7);" title="Add to Cart">
+                  <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+                </button>
+                <button class="btn-card-action btn-card-buy btn-card-whatsapp" onclick="event.stopPropagation(); inquireSingleProductWhatsApp(7);" title="Enquire">
+                  Enquire
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Companion 2 -->
+          <div class="product-card" onclick="location.href='product-detail.html?id=5'">
+            <div class="product-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80" alt="Mustard Tan Work Jacket" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <strong>4.7</strong>
+                <span>(15)</span>
+              </div>
+              <h3 class="product-title">Mustard Tan Work Jacket</h3>
+              <p class="product-price">₹ 540.00</p>
+              <div class="product-card-actions">
+                <button class="btn-card-action btn-card-cart" onclick="event.stopPropagation(); addToCart(5);" title="Add to Cart">
+                  <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+                </button>
+                <button class="btn-card-action btn-card-buy btn-card-whatsapp" onclick="event.stopPropagation(); inquireSingleProductWhatsApp(5);" title="Enquire">
+                  Enquire
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Companion 3 -->
+          <div class="product-card" onclick="location.href='product-detail.html?id=3'">
+            <div class="product-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80" alt="Sleeved Shirts with Inner" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <strong>4.8</strong>
+                <span>(19)</span>
+              </div>
+              <h3 class="product-title">Sleeved Shirts with Inner</h3>
+              <p class="product-price">₹ 629.98</p>
+              <div class="product-card-actions">
+                <button class="btn-card-action btn-card-cart" onclick="event.stopPropagation(); addToCart(3);" title="Add to Cart">
+                  <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+                </button>
+                <button class="btn-card-action btn-card-buy btn-card-whatsapp" onclick="event.stopPropagation(); inquireSingleProductWhatsApp(3);" title="Enquire">
+                  Enquire
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CUSTOMER REVIEWS ================= -->
+    <section class="section reviews-section">
+      <div class="container">
+        <div class="section-header-split">
+          <div>
+            <h2 class="section-title">Customer Reviews</h2>
+            <p class="section-subtitle-left">Real feedback from clients who purchased this item.</p>
+          </div>
+          <button class="btn-pill-outline-sm" onclick="showToast('Review form is opening...')">Write a Review</button>
+        </div>
+
+        <div class="reviews-summary-card">
+          <div class="overall-rating-box">
+            <span class="big-score">4.9</span>
+            <div class="stars-gold">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="total-rating-sub">Based on 32 verified reviews</span>
+          </div>
+
+          <div class="rating-breakdown-bars">
+            <div class="bar-row">
+              <span>5 Stars</span>
+              <div class="progress-track"><div class="progress-fill" style="width: 88%;"></div></div>
+              <span>88%</span>
+            </div>
+            <div class="bar-row">
+              <span>4 Stars</span>
+              <div class="progress-track"><div class="progress-fill" style="width: 10%;"></div></div>
+              <span>10%</span>
+            </div>
+            <div class="bar-row">
+              <span>3 Stars</span>
+              <div class="progress-track"><div class="progress-fill" style="width: 2%;"></div></div>
+              <span>2%</span>
+            </div>
+            <div class="bar-row">
+              <span>2 Stars</span>
+              <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              <span>0%</span>
+            </div>
+            <div class="bar-row">
+              <span>1 Star</span>
+              <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              <span>0%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-grid" style="margin-top: 24px;">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"The linen quality is unmatched. Light, airy, and has that effortless drape that elevates even standard trousers. Worth every penny."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Arthur C." class="author-avatar" />
+              <div class="author-details">
+                <h5 class="author-name">Arthur C.</h5>
+                <span class="author-role">Verified Buyer &bull; Size M</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Color is even richer in person. The buttons and stitching feel genuinely bespoke. Fast delivery to London."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus V." class="author-avatar" />
+              <div class="author-details">
+                <h5 class="author-name">Marcus V.</h5>
+                <span class="author-role">Verified Buyer &bull; Size L</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Customer care answered all my sizing questions within minutes. Excellent shopping experience from start to finish."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Elena K." class="author-avatar" />
+              <div class="author-details">
+                <h5 class="author-name">Elena K.</h5>
+                <span class="author-role">Verified Buyer &bull; Size S</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= FEATURES BAR ================= -->
+    <section class="features-section">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <h4 class="feature-title">Free Shipping</h4>
+            <p class="feature-desc">Complimentary tracked express delivery on all orders over ₹50, in luxury packaging.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-headphones-simple"></i></div>
+            <h4 class="feature-title">24/7 Support</h4>
+            <p class="feature-desc">Dedicated styling guidance, fit recommendations, and client support anytime.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+            <h4 class="feature-title">Easy Returns</h4>
+            <p class="feature-desc">Complimentary 30-day returns and exchanges with convenient doorstep pickup.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+            <h4 class="feature-title">Secure Checkout</h4>
+            <p class="feature-desc">Bank-grade 256-bit encryption protecting all orders and payment transactions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= SIZE GUIDE MODAL ================= -->
+  <div class="modal-overlay" id="sizeGuideOverlay" onclick="closeSizeGuideModal()"></div>
+  <div class="size-guide-modal" id="sizeGuideModal">
+    <button class="modal-close-btn" onclick="closeSizeGuideModal()"><i class="fa-solid fa-xmark"></i></button>
+    <h3>Size & Fit Guide</h3>
+    <p class="size-guide-sub" style="font-size: 0.8rem; color: var(--color-text-muted);">All measurements are provided in inches (and cm equivalent).</p>
+    
+    <div class="table-responsive">
+      <table class="size-chart-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Chest (in)</th>
+            <th>Shoulder (in)</th>
+            <th>Length (in)</th>
+            <th>Sleeve (in)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>XS</strong></td>
+            <td>36 - 38</td>
+            <td>17.0</td>
+            <td>27.5</td>
+            <td>8.5</td>
+          </tr>
+          <tr>
+            <td><strong>S</strong></td>
+            <td>38 - 40</td>
+            <td>17.5</td>
+            <td>28.0</td>
+            <td>9.0</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>M (Model)</strong></td>
+            <td>40 - 42</td>
+            <td>18.2</td>
+            <td>28.5</td>
+            <td>9.2</td>
+          </tr>
+          <tr>
+            <td><strong>L</strong></td>
+            <td>42 - 44</td>
+            <td>19.0</td>
+            <td>29.2</td>
+            <td>9.5</td>
+          </tr>
+          <tr>
+            <td><strong>XL</strong></td>
+            <td>44 - 46</td>
+            <td>19.8</td>
+            <td>30.0</td>
+            <td>9.8</td>
+          </tr>
+          <tr>
+            <td><strong>XXL</strong></td>
+            <td>46 - 48</td>
+            <td>20.5</td>
+            <td>30.5</td>
+            <td>10.0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="size-measure-tips">
+      <h4>How to Measure</h4>
+      <p><strong>Chest:</strong> Measure around the fullest part of your chest, keeping tape measure horizontal.</p>
+      <p><strong>Length:</strong> Measure from the highest point of the shoulder down to the bottom hemline.</p>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col-main">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-script">Sora</span>
+          </a>
+          <p class="footer-desc">
+            Guaranteed top quality fashion items. Customer-centric service, modern designs, durable and breathable fabrics.
+          </p>
+          <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+            <input type="email" placeholder="Your Email" class="newsletter-input" required />
+            <button type="submit" class="btn btn-newsletter">Subscribe</button>
+          </form>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Main Page</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="shop.html">Category</a></li>
+            <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Utility Page</h4>
+          <ul class="footer-links">
+            <li><a href="#">License</a></li>
+            <li><a href="#">Style Guide</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">404 Not Found</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0128</li>
+            <li><i class="fa-solid fa-envelope"></i> contact@soraboutique.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> Manchester 12459, UK</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 SORA Boutique. All rights reserved.</p>
+        <p class="credits">Built by Saleem Raza &bull; Powered by Figma</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SLIDE-OVER ENQUIRY DRAWER ================= -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title-wrap">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h3>Product Enquiry Bag (<span id="cartDrawerCount">0</span>)</h3>
+      </div>
+      <button class="close-drawer-btn" onclick="closeCart()" aria-label="Close cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-items-container" id="cartItemsContainer">
+      <div class="cart-empty-state">
+        <i class="fa-solid fa-bag-shopping empty-icon"></i>
+        <p>Your enquiry bag is empty.</p>
+        <button class="btn btn-dark-pill" onclick="closeCart()">Explore Collection</button>
+      </div>
+    </div>
+
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-subtotal-row">
+        <span>Estimated Total</span>
+        <span class="subtotal-amount" id="cartSubtotal">₹0.00</span>
+      </div>
+      <p class="shipping-note">All items and pricing will be compiled directly into a WhatsApp enquiry.</p>
+      <button class="btn btn-whatsapp-inquiry" onclick="inquireAllWhatsApp()">
+        <i class="fa-brands fa-whatsapp"></i> Enquire All on WhatsApp
+      </button>
+      <button class="clear-cart-btn" onclick="clearCart()">Empty Enquiry Bag</button>
+    </div>
+  </div>
+
+  <!-- ================= QUICK VIEW MODAL ================= -->
+  <div class="modal-overlay" id="quickViewOverlay" onclick="closeQuickView()"></div>
+  <div class="quick-view-modal" id="quickViewModal">
+    <button class="modal-close-btn" onclick="closeQuickView()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="quick-view-content" id="quickViewBody"></div>
+  </div>
+
+  <!-- ================= SEARCH OVERLAY MODAL ================= -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <div class="search-header">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Search clothes, shirts, collections..." autofocus />
+        </div>
+        <button class="search-close-btn" onclick="closeSearch()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-hint">Type to search latest apparel and styles...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div class="toast-notification" id="toastNotification">
+    <i class="fa-solid fa-check-circle toast-icon"></i>
+    <span id="toastMessage">Item added to your bag</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
